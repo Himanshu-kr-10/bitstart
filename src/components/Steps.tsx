@@ -7,7 +7,7 @@ export const BouncyCardsFeatures = () => {
     <section className="container w-full px-4 py-12 text-slate-500 mt-10">
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
         <div>
-          <span className="text-[hsl(76,87%,67%)] font-mono font-medium md:text-2xl">
+          <span className="text-[rgb(255,161,74)] font-mono font-medium md:text-2xl">
             How it works
           </span>
           <h2 className="text-2xl font-bold md:text-4xl text-neutral-100">

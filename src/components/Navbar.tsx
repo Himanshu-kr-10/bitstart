@@ -93,7 +93,7 @@ const Navbar = () => {
         <Button variant="outline">Launch your project</Button>
         <div className="flex items-center gap-1.5">
           <Button variant="default">Connect</Button>
-          <Button variant="default" className="bg-orange-500">
+          <Button variant="default" className="bg-[#ffa14a] hover:bg-[#FF9736]">
             0 Points
           </Button>
         </div>

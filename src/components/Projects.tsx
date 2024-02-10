@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <div className="container">
       <div className="mx-6 mt-20">
-        <p className="font-medium font-mono text-2xl text-[hsl(76,87%,67%)] ">
+        <p className="font-medium font-mono text-2xl text-[#ffa14a] ">
           Projects
         </p>
       </div>

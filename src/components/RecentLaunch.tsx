@@ -16,7 +16,7 @@ const RecentLaunch = () => {
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   return (
     <div className="container flex flex-col mt-20">
-      <p className="md:text-2xl font-mono font-medium tracking-wide text-[hsl(76,87%,67%)] mx-6">
+      <p className="md:text-2xl font-mono font-medium tracking-wide text-[#ffa14a] mx-6">
         Recently launched project using BitStart
       </p>
       <motion.div
