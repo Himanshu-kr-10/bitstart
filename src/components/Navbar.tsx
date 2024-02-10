@@ -4,9 +4,12 @@ import { Button } from './ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const { scrollY } = useScroll();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const [hidden, setHidden] = useState(false);
 
@@ -26,7 +29,7 @@ const Navbar = () => {
       }}
       animate={hidden ? 'hidden' : 'visible'}
       transition={{ duration: 0.35, ease: 'easeInOut' }}
-      className="container fixed flex items-center justify-between w-full gap-4 overflow-hidden px-4 pl-10 py-3 z-20 bg-slate-950"
+      className="fixed flex items-center justify-between w-full gap-4 overflow-hidden px-4 pl-10 py-3 z-20 bg-slate-950"
     >
       <div className="relative flex h-8 items-center w-[390px]">
         <div className="flex items-center gap-4">
@@ -62,17 +65,24 @@ const Navbar = () => {
             </div>
           </Link>
           <div className="">
-            <Tabs defaultValue="projects" className="w-[400px]">
+            <Tabs
+              defaultValue={pathname === '/' ? 'projects' : 'lottery'}
+              className="w-[400px]"
+            >
               <TabsList>
-                <TabsTrigger value="projects" className="font-mono uppercase">
-                  <Link href="/">
-                    PROJECTS
-                  </Link>
+                <TabsTrigger
+                  value="projects"
+                  className="font-mono uppercase"
+                  onClick={() => router.push('/')}
+                >
+                  PROJECTS
                 </TabsTrigger>
-                <TabsTrigger value="lottery" className="font-mono uppercase">
-                  <Link href="/lottery">
-                    LOTTERY
-                  </Link>
+                <TabsTrigger
+                  value="lottery"
+                  className="font-mono uppercase"
+                  onClick={() => router.push('/lottery')}
+                >
+                  LOTTERY
                 </TabsTrigger>
               </TabsList>
             </Tabs>
